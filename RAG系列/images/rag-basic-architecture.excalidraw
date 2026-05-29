@@ -1,0 +1,54 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {"type": "text", "id": "title", "x": 250, "y": 20, "width": 500, "height": 40, "text": "RAG Basic Architecture", "fontSize": 28, "fontFamily": 1, "strokeColor": "#1e1e1e", "originalText": "RAG Basic Architecture", "autoResize": true},
+
+    {"type": "rectangle", "id": "r_doc", "x": 50, "y": 100, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#a5d8ff", "fillStyle": "solid", "boundElements": [{"id": "t_doc", "type": "text"}]},
+    {"type": "text", "id": "t_doc", "x": 55, "y": 110, "width": 150, "height": 50, "text": "Documents\n(PDF/MD/TXT)", "fontSize": 16, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_doc", "originalText": "Documents\n(PDF/MD/TXT)", "autoResize": true},
+
+    {"type": "arrow", "id": "a1", "x": 215, "y": 135, "width": 70, "height": 0, "points": [[0,0],[70,0]], "endArrowhead": "arrow", "startBinding": {"elementId": "r_doc", "fixedPoint": [1, 0.5]}, "endBinding": {"elementId": "r_chunk", "fixedPoint": [0, 0.5]}},
+
+    {"type": "rectangle", "id": "r_chunk", "x": 290, "y": 100, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#b2f2bb", "fillStyle": "solid", "boundElements": [{"id": "t_chunk", "type": "text"}]},
+    {"type": "text", "id": "t_chunk", "x": 295, "y": 110, "width": 150, "height": 50, "text": "Chunking\n(Text Splitter)", "fontSize": 16, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_chunk", "originalText": "Chunking\n(Text Splitter)", "autoResize": true},
+
+    {"type": "arrow", "id": "a2", "x": 455, "y": 135, "width": 70, "height": 0, "points": [[0,0],[70,0]], "endArrowhead": "arrow", "startBinding": {"elementId": "r_chunk", "fixedPoint": [1, 0.5]}, "endBinding": {"elementId": "r_embed", "fixedPoint": [0, 0.5]}},
+
+    {"type": "rectangle", "id": "r_embed", "x": 530, "y": 100, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#d0bfff", "fillStyle": "solid", "boundElements": [{"id": "t_embed", "type": "text"}]},
+    {"type": "text", "id": "t_embed", "x": 535, "y": 110, "width": 150, "height": 50, "text": "Embedding\n(Vectorize)", "fontSize": 16, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_embed", "originalText": "Embedding\n(Vectorize)", "autoResize": true},
+
+    {"type": "arrow", "id": "a3", "x": 695, "y": 135, "width": 70, "height": 0, "points": [[0,0],[70,0]], "endArrowhead": "arrow", "startBinding": {"elementId": "r_embed", "fixedPoint": [1, 0.5]}, "endBinding": {"elementId": "r_vs", "fixedPoint": [0, 0.5]}},
+
+    {"type": "rectangle", "id": "r_vs", "x": 770, "y": 100, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#c3fae8", "fillStyle": "solid", "boundElements": [{"id": "t_vs", "type": "text"}]},
+    {"type": "text", "id": "t_vs", "x": 775, "y": 110, "width": 150, "height": 50, "text": "Vector Store\n(Chroma/Milvus)", "fontSize": 16, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_vs", "originalText": "Vector Store\n(Chroma/Milvus)", "autoResize": true},
+
+    {"type": "text", "id": "phase1", "x": 400, "y": 75, "width": 200, "height": 25, "text": "Indexing Phase", "fontSize": 20, "fontFamily": 1, "strokeColor": "#757575", "originalText": "Indexing Phase", "autoResize": true},
+
+    {"type": "rectangle", "id": "r_query", "x": 50, "y": 280, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#ffd8a8", "fillStyle": "solid", "boundElements": [{"id": "t_query", "type": "text"}]},
+    {"type": "text", "id": "t_query", "x": 55, "y": 290, "width": 150, "height": 50, "text": "User Query", "fontSize": 18, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_query", "originalText": "User Query", "autoResize": true},
+
+    {"type": "arrow", "id": "a4", "x": 215, "y": 315, "width": 70, "height": 0, "points": [[0,0],[70,0]], "endArrowhead": "arrow", "startBinding": {"elementId": "r_query", "fixedPoint": [1, 0.5]}, "endBinding": {"elementId": "r_retrieve", "fixedPoint": [0, 0.5]}},
+
+    {"type": "rectangle", "id": "r_retrieve", "x": 290, "y": 280, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#b2f2bb", "fillStyle": "solid", "boundElements": [{"id": "t_retrieve", "type": "text"}]},
+    {"type": "text", "id": "t_retrieve", "x": 295, "y": 290, "width": 150, "height": 50, "text": "Retrieval\n(Similarity Search)", "fontSize": 16, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_retrieve", "originalText": "Retrieval\n(Similarity Search)", "autoResize": true},
+
+    {"type": "arrow", "id": "a5", "x": 455, "y": 315, "width": 70, "height": 0, "points": [[0,0],[70,0]], "endArrowhead": "arrow", "startBinding": {"elementId": "r_retrieve", "fixedPoint": [1, 0.5]}, "endBinding": {"elementId": "r_prompt", "fixedPoint": [0, 0.5]}},
+
+    {"type": "rectangle", "id": "r_prompt", "x": 530, "y": 280, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#d0bfff", "fillStyle": "solid", "boundElements": [{"id": "t_prompt", "type": "text"}]},
+    {"type": "text", "id": "t_prompt", "x": 535, "y": 290, "width": 150, "height": 50, "text": "Prompt\n(Query + Context)", "fontSize": 16, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_prompt", "originalText": "Prompt\n(Query + Context)", "autoResize": true},
+
+    {"type": "arrow", "id": "a6", "x": 695, "y": 315, "width": 70, "height": 0, "points": [[0,0],[70,0]], "endArrowhead": "arrow", "startBinding": {"elementId": "r_prompt", "fixedPoint": [1, 0.5]}, "endBinding": {"elementId": "r_llm", "fixedPoint": [0, 0.5]}},
+
+    {"type": "rectangle", "id": "r_llm", "x": 770, "y": 280, "width": 160, "height": 70, "roundness": {"type": 3}, "backgroundColor": "#ffc9c9", "fillStyle": "solid", "boundElements": [{"id": "t_llm", "type": "text"}]},
+    {"type": "text", "id": "t_llm", "x": 775, "y": 290, "width": 150, "height": 50, "text": "LLM\n(GPT-4o / Qwen)", "fontSize": 16, "fontFamily": 1, "strokeColor": "#1e1e1e", "textAlign": "center", "verticalAlign": "middle", "containerId": "r_llm", "originalText": "LLM\n(GPT-4o / Qwen)", "autoResize": true},
+
+    {"type": "text", "id": "phase2", "x": 400, "y": 255, "width": 200, "height": 25, "text": "Query Phase", "fontSize": 20, "fontFamily": 1, "strokeColor": "#757575", "originalText": "Query Phase", "autoResize": true},
+
+    {"type": "arrow", "id": "a_vs_r", "x": 850, "y": 175, "width": 0, "height": 100, "points": [[0,0],[0,100]], "endArrowhead": "arrow", "strokeStyle": "dashed", "startBinding": {"elementId": "r_vs", "fixedPoint": [0.5, 1]}, "endBinding": {"elementId": "r_retrieve", "fixedPoint": [0.5, 0]}},
+    {"type": "text", "id": "t_vs_r", "x": 860, "y": 210, "width": 80, "height": 20, "text": "Top-K Docs", "fontSize": 14, "fontFamily": 1, "strokeColor": "#757575", "originalText": "Top-K Docs", "autoResize": true}
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}
